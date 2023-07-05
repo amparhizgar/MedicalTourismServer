@@ -1,9 +1,10 @@
 package com.se.medicaltourism;
 
-import app.model.Country;
-import app.model.File;
-import app.model.Residence;
-import app.model.UserModel;
+
+import com.se.medicaltourism.model.Country;
+import com.se.medicaltourism.model.File;
+import com.se.medicaltourism.model.Residence;
+import com.se.medicaltourism.model.UserModel;
 
 import java.util.List;
 

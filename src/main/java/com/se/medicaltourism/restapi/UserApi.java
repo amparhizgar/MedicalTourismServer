@@ -8,13 +8,13 @@ import java.util.Map;
 @RestController
 public class UserApi {
 
-    @GetMapping("/api/users/{username}")
-    public String getUser(@PathVariable("username") String username) {
-       return "this is your response " + username;
+    @GetMapping("/getPackages")
+    public Map<String, String> getUser(@RequestParam() Map<String, String> filter) {
+       return Map.of("response", filter.get("name"));
     }
 
-    @PostMapping("/api/addCredit")
-    public Map<String, String> addCredit(@RequestBody String body) {
-       return Map.of("key1", "value1");
+    @PostMapping("/selectPackage")
+    public Map<String, String> addCredit(@RequestBody Map<String, String> map) {
+       return Map.of("your id is", map.get("id"));
     }
 }
