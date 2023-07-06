@@ -7,12 +7,13 @@ import com.se.medicaltourism.model.Residence;
 import com.se.medicaltourism.model.UserModel;
 
 import java.util.List;
-
+import com.se.medicaltourism.model.Package;
 public class UserController {
     UserModel user = new UserModel("Ali", "Mohammadi", Country.IRAN, "secretPassword");
 
-    public List<Package> getPackages() {
-        throw new RuntimeException("Not implemented yet");
+    static public List<Package> getPackages() {
+        PackageCatalog pckg = new PackageCatalog();
+        return pckg.getRecords();
     }
 
     public void submitPackage(Package p) {

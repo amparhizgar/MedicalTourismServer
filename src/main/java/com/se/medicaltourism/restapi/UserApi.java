@@ -4,13 +4,14 @@ package com.se.medicaltourism.restapi;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-
+import com.se.medicaltourism.UserController;
 @RestController
 public class UserApi {
 
     @GetMapping("/getPackages")
-    public Map<String, String> getUser(@RequestParam() Map<String, String> filter) {
-       return Map.of("response", filter.get("name"));
+    String getUser(@RequestParam() Map<String, String> filter) {
+        return UserController.getPackages().toString();
+//       return Map.of("response", filter.get("name"));
     }
 
     @PostMapping("/selectPackage")

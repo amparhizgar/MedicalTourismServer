@@ -10,6 +10,10 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import com.se.medicaltourism.model.BaseModel;
+
+import javax.management.ReflectionException;
+
 public class csv<T> {
     private static final Logger LOGGER = Logger.getLogger( "MedicalTourism" );
 
@@ -53,6 +57,23 @@ public class csv<T> {
             instances.add(newInstance);
         }
         return instances;
+    }
+
+    public List<T> importObjects(Class<BaseModel> cls)  {
+        try {
+            List<T> instances = new ArrayList<>();
+            var instancesData = csv.importInstances(cls.getField("filePath").toString());
+            var mapper = cls.getMethod("makeFromMap");
+            for (var iter : instancesData) {
+                var newInstance = (T) mapper.invoke(iter);
+                instances.add(newInstance);
+            }
+            return instances;
+        }
+
+        catch (Exception e) { throw null; }
+
+
     }
 
     public static void main(String[] args) {

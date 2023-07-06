@@ -2,8 +2,8 @@ package com.se.medicaltourism.model;
 
 import java.util.Map;
 
-public class Package {
-    static final String filePath = "test/resource/packages.csv";
+public class Package extends BaseModel {
+    public static final String filePath = "test/resource/packages.csv";
     private String category;
     private String title;
     private String description;
