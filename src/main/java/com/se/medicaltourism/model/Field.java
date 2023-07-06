@@ -1,5 +1,9 @@
 package com.se.medicaltourism.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 class FileDocDao{
     public String getName() {
         return name;
@@ -50,5 +54,14 @@ public class Field {
 
     public void setContent(String content) {
         this.content = content;
+    }
+    static public List<Field> makeFromMap(List<Map<String,String> > listMap){
+        List<Field> result = new ArrayList();
+        for (var iter:listMap ){
+            var newField = new Field(iter.get("name"));
+            newField.setContent(iter.get("content"));
+            result.add(newField);
+        }
+        return result;
     }
 }

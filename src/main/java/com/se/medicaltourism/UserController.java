@@ -49,8 +49,8 @@ public class UserController {
         return result;
     }
 
-    public void modifyDoc(long id, Field doc) {
-        throw new RuntimeException("Not implemented yet");
+    static public void modifyDocs(List<Field> fields) {
+        user.modifyDocs(fields);
     }
 
     public void fieldsDone() {

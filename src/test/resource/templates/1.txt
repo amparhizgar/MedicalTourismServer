@@ -1,0 +1,1 @@
+blood_group,lab2_result

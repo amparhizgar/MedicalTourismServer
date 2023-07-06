@@ -1,0 +1,4 @@
+phone:09213219038
+passport:passport_data
+blood_group:B-
+lab1_result:file_content

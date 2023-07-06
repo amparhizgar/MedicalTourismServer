@@ -44,4 +44,11 @@ public class UserApi {
     public List<Field> getNeededDocs(){
         return UserController.getRequiredDocs();
     }
+
+    @PatchMapping("/modifyDocs")
+    public void modifyDocs(@RequestBody List<Map<String,String>> map){
+        var fields = Field.makeFromMap(map);
+        UserController.modifyDocs(fields);
+        System.out.println(fields);
+    }
 }
