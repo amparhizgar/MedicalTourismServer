@@ -1,5 +1,7 @@
 package com.se.medicaltourism.model;
 
+import com.se.medicaltourism.utils.SearchFilter;
+
 import java.util.Map;
 
 public class Package extends BaseModel {
@@ -41,5 +43,22 @@ public class Package extends BaseModel {
         return this.title;
     }
 
+    @Override
+    public boolean checkFilter(SearchFilter filter){
+        boolean result = true;
+        if (filter.data.containsKey("category")){
+            result &= (filter.data.get("category").equals(category));
+        }
+        if (filter.data.containsKey("title")){
+            result &= (filter.data.get("title").equals(title) );
+        }
+        if (filter.data.containsKey("description")){
+            result &= (filter.data.get("description").equals(description));
+        }
+        if (filter.data.containsKey("clininc_name")){
+            result &= (filter.data.get("clininc_name").equals(clininc_name));
+        }
 
+        return result;
+    }
 }

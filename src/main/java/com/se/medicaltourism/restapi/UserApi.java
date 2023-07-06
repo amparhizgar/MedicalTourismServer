@@ -15,7 +15,7 @@ public class UserApi {
 
     @GetMapping("/getPackages")
     List<Package> getUser(@RequestParam() Map<String, String> filter) {
-        return UserController.getPackages();
+        return UserController.getPackages(filter);
     }
 
     @PostMapping("/selectPackage")
