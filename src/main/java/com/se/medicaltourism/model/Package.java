@@ -28,14 +28,21 @@ public class Package extends BaseModel {
         this.description = description;
     }
 
-    public Package(String category, String title, String description) {
-        this.category = category;
-        this.title = title;
-        this.description = description;
-    }
+//    public Package(String category, String title, String description) {
+//        this.category = category;
+//        this.title = title;
+//        this.description = description;
+//    }
 
-    public static Package makeFromMap(Map<String, String> map) {
-        return new Package(map.get("category"), map.get("title"), map.get("description"));
+    public Package(Map<String,String> map) {
+        super(map);
+        this.category = map.get("category");
+        this.title = map.get("title");
+        this.description = map.get("description");
+    }
+    public static Package makeFromMap(Map<String, String> map)  {
+
+        return new Package(map);
     }
 
     @Override
@@ -59,6 +66,6 @@ public class Package extends BaseModel {
             result &= (filter.data.get("clininc_name").equals(clininc_name));
         }
 
-        return result;
+        return result & super.checkFilter(filter);
     }
 }
