@@ -11,6 +11,7 @@ import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import com.se.medicaltourism.model.BaseModel;
+import com.se.medicaltourism.model.Package;
 
 import javax.management.ReflectionException;
 
@@ -62,10 +63,11 @@ public class csv<T> {
     public List<T> importObjects(Class<BaseModel> cls)  {
         try {
             List<T> instances = new ArrayList<>();
-            var instancesData = csv.importInstances(cls.getField("filePath").toString());
-            var mapper = cls.getMethod("makeFromMap");
+            var instancesData = csv.importInstances( (String) cls.getField("filePath").get(null) );
+//            public static Package makeFromMap(Map<String, String> map)
+            var mapper = cls.getMethod("makeFromMap",Map.class);
             for (var iter : instancesData) {
-                var newInstance = (T) mapper.invoke(iter);
+                var newInstance = (T) mapper.invoke(null,iter);
                 instances.add(newInstance);
             }
             return instances;
