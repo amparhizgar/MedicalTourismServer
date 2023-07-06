@@ -1,6 +1,8 @@
 package com.se.medicaltourism.restapi;
 
 
+import com.se.medicaltourism.model.Country;
+import com.se.medicaltourism.model.UserModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,9 +14,8 @@ import com.se.medicaltourism.model.Package;
 public class UserApi {
 
     @GetMapping("/getPackages")
-    List<String> getUser(@RequestParam() Map<String, String> filter) {
+    List<Package> getUser(@RequestParam() Map<String, String> filter) {
         return UserController.getPackages();
-//       return Map.of("response", filter.get("name"));
     }
 
     @PostMapping("/selectPackage")

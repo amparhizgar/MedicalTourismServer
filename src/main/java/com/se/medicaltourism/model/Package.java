@@ -3,13 +3,28 @@ package com.se.medicaltourism.model;
 import java.util.Map;
 
 public class Package extends BaseModel {
-    public static final String filePath = "/media/c0re/driveD/university/SE1/project/p5/MedicalTourismServer/src/test/resource/packages.csv";
+    public static final String filePath = "src/test/resource/packages.csv";
     private String category;
     private String title;
     private String description;
 
     private String clininc_name;
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Package(String category, String title, String description) {
         this.category = category;
