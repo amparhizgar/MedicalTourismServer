@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "988686ea-b1eb-408a-adf5-7e47344e53c8",
+		"name": "tourism",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get package",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/getPackages",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getPackages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filterByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/getPackages?category=c1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getPackages"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "c1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/getPackages?title=A",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getPackages"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "A"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "empty",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/getPackages?category=c99",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getPackages"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "c99"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByUid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/getPackages?uid=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getPackages"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "submit package",
+			"item": [
+				{
+					"name": "submit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uid\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/selectPackage",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"selectPackage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get residence",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/getResidences",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getResidences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/getResidences?name=Taha",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getResidences"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Taha"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by stars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/getResidences?stars=4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getResidences"
+							],
+							"query": [
+								{
+									"key": "stars",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "submit residence",
+			"item": [
+				{
+					"name": "set residence",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uid\":20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/selectResidence",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"selectResidence"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "visa",
+			"item": [
+				{
+					"name": "unset visa help",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"state\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/setVisaHelp",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"setVisaHelp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set visa help",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"state\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/setVisaHelp",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"setVisaHelp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "docs",
+			"item": [
+				{
+					"name": "get needed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/neededDocs",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"neededDocs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify docs",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"phone\",\n        \"content\": \"09213219038\"\n    },\n    {\n        \"name\": \"passport\",\n        \"content\": \"passport_data\"\n    },\n    {\n        \"name\": \"blood_group\",\n        \"content\": \"B-\"\n    },\n    {\n        \"name\": \"lab1_result\",\n        \"content\": \"file_content\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/modifyDocs",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modifyDocs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "done",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fieldsDone",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fieldsDone"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

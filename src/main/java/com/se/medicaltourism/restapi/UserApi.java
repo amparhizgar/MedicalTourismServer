@@ -51,4 +51,10 @@ public class UserApi {
         UserController.modifyDocs(fields);
         System.out.println(fields);
     }
+
+    @PostMapping("/fieldsDone")
+    public String fieldsDone(){
+        int requestId = UserController.fieldsDone();
+        return "your request has been added, id: " + String.valueOf(requestId);
+    }
 }

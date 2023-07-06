@@ -133,4 +133,10 @@ public class UserModel {
     public void modifyDocs(List<Field> fields){
         storage.modifyDocs(fields);
     }
+
+    public void setRequestId(int requestId) {
+        this.requestId = requestId;
+    }
+
+    private int requestId;
 }

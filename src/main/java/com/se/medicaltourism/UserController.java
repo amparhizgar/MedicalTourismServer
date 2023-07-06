@@ -53,7 +53,9 @@ public class UserController {
         user.modifyDocs(fields);
     }
 
-    public void fieldsDone() {
-        throw new RuntimeException("Not implemented yet");
+    static public int fieldsDone() {
+        int requestId = PrimaryRequestWorkflow.addPrimaryRequest(user.getName());
+        user.setRequestId(requestId);
+        return requestId;
     }
 }
