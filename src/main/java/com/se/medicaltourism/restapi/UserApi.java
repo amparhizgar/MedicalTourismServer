@@ -1,15 +1,13 @@
 package com.se.medicaltourism.restapi;
 
 
-import com.se.medicaltourism.model.Country;
-import com.se.medicaltourism.model.Residence;
-import com.se.medicaltourism.model.UserModel;
+import com.se.medicaltourism.model.*;
+import com.se.medicaltourism.model.Package;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
 import com.se.medicaltourism.UserController;
-import com.se.medicaltourism.model.Package;
 
 @RestController
 public class UserApi {
@@ -40,5 +38,10 @@ public class UserApi {
     public String setVisaHelp(@RequestBody Map<String, String> map) {
         UserController.setVisaHelp(Boolean.parseBoolean(map.get("state")));
         return "your package set to " + map.get("state");
+    }
+
+    @GetMapping("/neededDocs")
+    public List<Field> getNeededDocs(){
+        return UserController.getRequiredDocs();
     }
 }

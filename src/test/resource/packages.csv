@@ -1,4 +1,4 @@
-uid,title,city,description,category,clinic_name,docter_names
-1,A,Tehran,A in Tehran,c1,Doctor+,arash-ghanbar-navab
-2,B,Mashad,B in MASHAD,c2,Ampool,ali-kazem
-3,C,Mashad,C in mashad,c1,Doctor+,jasem
+uid,title,city,description,category,clinic_name,docter_names,templateId
+1,A,Tehran,A in Tehran,c1,Doctor+,arash-ghanbar-navab,2
+2,B,Mashad,B in MASHAD,c2,Ampool,ali-kazem,2
+3,C,Mashad,C in mashad,c1,Doctor+,jasem,1

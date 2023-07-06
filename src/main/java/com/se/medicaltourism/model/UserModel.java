@@ -73,4 +73,8 @@ public class UserModel {
     private int packageId,residenceId;
     private boolean visaHelp;
 
+    public UserSelection getSelection(){
+        return new UserSelection(visaHelp, packageId, residenceId);
+    }
+
 }

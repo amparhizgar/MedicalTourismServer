@@ -1,20 +1,18 @@
 package com.se.medicaltourism;
 
 
-import com.se.medicaltourism.model.Country;
-import com.se.medicaltourism.model.File;
-import com.se.medicaltourism.model.Residence;
-import com.se.medicaltourism.model.UserModel;
+import com.se.medicaltourism.model.*;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import com.se.medicaltourism.model.Package;
 import com.se.medicaltourism.utils.SearchFilter;
 
 public class UserController {
-    static private UserModel user = new UserModel("Ali", "Mohammadi", Country.IRAN, "secretPassword");
+    static private UserModel user = new UserModel("Ali", "Mohammadi", Country.UAE, "secretPassword");
     static private PackageCatalog pckg = new PackageCatalog();
     static private ResidenceCatalog reside = new ResidenceCatalog();
     static public List<Package> getPackages(Map<String,String> filterMap) {
@@ -39,11 +37,19 @@ public class UserController {
         user.setVisaHelp(help);
     }
 
-    public File[] getRequiredDocs() {
-        throw new RuntimeException("Not implemented yet");
+    static public List<Field> getRequiredDocs() {
+        List<Field> visaFields = new ArrayList<>();
+        UserSelection selection = user.getSelection();
+        System.out.println(selection);
+        if (selection.getVisaHelp()){
+            visaFields = VisaController.getVisaFields(user.getCountry());
+        }
+        var packageFields = pckg.getPackageFields(user.getPackageId());
+        List<Field> result = Stream.concat(visaFields.stream(), packageFields.stream()).toList();
+        return result;
     }
 
-    public void modifyDoc(long id, File doc) {
+    public void modifyDoc(long id, Field doc) {
         throw new RuntimeException("Not implemented yet");
     }
 

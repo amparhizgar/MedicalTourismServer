@@ -10,6 +10,12 @@ public class Package extends BaseModel {
     private String title;
     private String description;
 
+    public String getTemplateId() {
+        return templateId;
+    }
+
+    private String templateId;
+
     private String clininc_name;
 
     public String getTitle() {
@@ -39,6 +45,7 @@ public class Package extends BaseModel {
         this.category = map.get("category");
         this.title = map.get("title");
         this.description = map.get("description");
+        this.templateId = map.get("templateId");
     }
     public static Package makeFromMap(Map<String, String> map)  {
 
