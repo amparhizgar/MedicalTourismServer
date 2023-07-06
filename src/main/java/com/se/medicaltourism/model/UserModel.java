@@ -44,4 +44,33 @@ public class UserModel {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public int getPackageId() {
+        return packageId;
+    }
+
+    public void submitPackage(int packageId) {
+        this.packageId = packageId;
+    }
+
+    public int getResidenceId() {
+        return residenceId;
+    }
+
+    public void submitResident(int residenceId) {
+        this.residenceId = residenceId;
+    }
+
+    public boolean isVisaHelp() {
+        return visaHelp;
+    }
+
+    public void setVisaHelp(boolean visaHelp) {
+        this.visaHelp = visaHelp;
+    }
+
+    //requests data
+    private int packageId,residenceId;
+    private boolean visaHelp;
+
 }

@@ -14,27 +14,29 @@ import com.se.medicaltourism.model.Package;
 import com.se.medicaltourism.utils.SearchFilter;
 
 public class UserController {
-    UserModel user = new UserModel("Ali", "Mohammadi", Country.IRAN, "secretPassword");
+    static private UserModel user = new UserModel("Ali", "Mohammadi", Country.IRAN, "secretPassword");
     static private PackageCatalog pckg = new PackageCatalog();
+    static private ResidenceCatalog reside = new ResidenceCatalog();
     static public List<Package> getPackages(Map<String,String> filterMap) {
         SearchFilter sf = new SearchFilter(filterMap);
         return pckg.getRecords(sf);
     }
 
-    public void submitPackage(Package p) {
-        throw new RuntimeException("Not implemented yet");
+    static public void submitPackage(int uid) {
+        user.submitPackage(uid);
     }
 
-    public List<Residence> getResidences(int filter) {
-        throw new RuntimeException("Not implemented yet");
+    static public List<Residence> getResidences(Map<String,String> filterMap) {
+        SearchFilter sf = new SearchFilter(filterMap);
+        return reside.getRecords(sf);
     }
 
-    public void submitResidence(Residence residence) {
-        throw new RuntimeException("Not implemented yet");
+    static public void submitResidence(int uid) {
+        user.submitResident(uid);
     }
 
-    public void setVisaHelp(boolean help) {
-
+    static public void setVisaHelp(boolean help) {
+        user.setVisaHelp(help);
     }
 
     public File[] getRequiredDocs() {

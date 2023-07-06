@@ -1,7 +1,5 @@
 package com.se.medicaltourism;
-import com.se.medicaltourism.BaseCatalog;
 import com.se.medicaltourism.model.Package;
-import com.se.medicaltourism.ItemDAO;
 import com.se.medicaltourism.utils.SearchFilter;
 
 import java.util.List;
